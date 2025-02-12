@@ -117,5 +117,27 @@ function scrollToBottom() {
 scrollBottomBtn.onclick = scrollToBottom;
 //#endregion
 
-//#region Bottom
+//#region popdownlist
+let list = document.getElementById('popdown_list');
+let list_btn = document.getElementById('header_head_container_left_button');
+let list_btn_line = document.getElementsByClassName("btn_line");
+let list_opacity = window.getComputedStyle(list);
+list_btn.onclick = popdownFunction;
+list_btn_line.onclick = popdownFunction;
+
+//memo 无法直接获取在css中设置的值需要用window方法来获取
+function popdownFunction() {
+    if (list_opacity.display == 'none') {
+        list.style.display = 'flex';
+    } else {
+        list.style.display = 'none';
+    }
+
+    function listEventListener(event) {
+        if (event.target.id != 'header_head_container_left_button' && event.target.id != 'btn_line') {
+            list.style.display = 'none';
+        }
+    }
+    document.addEventListener('click', listEventListener);
+}
 //#endregion
