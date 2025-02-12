@@ -84,11 +84,18 @@ Array.from(sns_icons).forEach(function (sns_icon) {
 //#region pop
 window.onscroll = function () { scrollFunction() };
 let scrollTopBtn = document.getElementById("top");
+let scrollBottomBtn = document.getElementById('bottom');
 function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         scrollTopBtn.style.display = "block";
+        scrollTopBtn.style.opacity = '1';
+        scrollBottomBtn.style.display = 'none';
+        //条件是超过400像素，两个分别是移动距离和元素的移动距离，一般是一起用
     } else {
-        scrollTopBtn.style.display = "none";
+        setTimeout(() => {
+            scrollTopBtn.style.display = "none";
+            scrollBottomBtn.style.display = "block";
+        }, 100);
     }
 }
 
@@ -99,4 +106,15 @@ function scrollToTop() {
     });
 }
 scrollTopBtn.onclick = scrollToTop;
+
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+}
+scrollBottomBtn.onclick = scrollToBottom;
+//#endregion
+
+//#region Bottom
 //#endregion

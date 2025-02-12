@@ -211,7 +211,6 @@ main {
     padding-top: 6%;
     text-align: center;
     align-items: center;
-
 }
 
 #main_aboutme_container {
@@ -261,7 +260,7 @@ main {
 }
 
 .main_ablum_pic_row {
-    height: 40vh;
+    height: 38vh;
     /* padding-left: ; */
     /* padding-right: 8%; */
     /* background-color: aqua; */
@@ -293,12 +292,27 @@ footer {
 
 #top {
     position: fixed;
+    z-index: 1001;
+    bottom: 10%;
+    width: 40px;
+    height: 40px;
+    left: 4%;
+    opacity: 0.3;
+    display: none;
+    transition: opacity 2s ease;
+}
+
+#bottom {
+    opacity: 1;
+    position: fixed;
     z-index: 1000;
     bottom: 10%;
     width: 40px;
     height: 40px;
     left: 4%;
+    /* display: none; */
 }
+
 
 /* common */
 ul {
