@@ -135,18 +135,15 @@ function popdownFunction() {
         setTimeout(() => {
             list.style.display = 'flex';
             document.addEventListener('click', listEventListener);
-            console.log('111');
         }, 100);
     } else {
         list.style.display = 'none';
-        console.log('222');
     }
 
     function listEventListener(event) {
         if (event.target.id != 'header_head_container_left_button' && event.target.classList != 'btn_line') {
             // console.log(event.target.id, '1111', event.target.classList);
             list.style.display = 'none';
-            console.log('3333');
             // 移除事件监听器
             document.removeEventListener('click', listEventListener);
         }
@@ -157,4 +154,40 @@ function popdownFunction() {
         document.addEventListener('click', listEventListener);
     }
 }
+//#endregion
+
+//#region  pic swwitcher
+let album_pics = document.getElementsByClassName('pic_album');
+let album_selector = document.getElementsByClassName('main_ablum_icon');
+const pics = {
+    china: ["./Src/china1.jpg", "./Src/china2.jpg", "./Src/china3.jpg", "./Src/china4.jpg"],
+    japan: ["./Src/japan1.jpg", "./Src/japan2.jpg", "./Src/japan3.jpg", "./Src/japan4.jpg"],
+    india: ["./Src/india1.jpg", "./Src/india2.jpg", "./Src/india3.jpg", "./Src/india4.jpg"]
+}
+Array.from(album_selector).forEach(element => {
+    element.addEventListener('mouseover', picSwithcer);
+});
+
+function picSwithcer(event) {
+    let country = event.target.textContent.toLowerCase();
+    //切换透明度至0
+    Array.from(album_pics).forEach((element) => {
+        element.style.opacity = '0';
+    });
+
+    setTimeout(() => {
+        Array.from(album_pics).forEach((element, index) => {
+            element.src = pics[country][index];
+            element.style.opacity = '1';
+        });
+    }, 300);
+    // Array.from(album_pics).forEach((element, index) => {
+    //     element.src = pics[country][index];
+    //     element.style.opacity = '1';
+    // });
+}
+
+
+
+
 //#endregion

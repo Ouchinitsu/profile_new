@@ -286,6 +286,12 @@ main {
     font-size: 28px;
     padding-left: 10%;
     padding-right: 10%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.main_ablum_icon:hover {
+    border-bottom: 2px solid black;
 }
 
 #main_ablum_pic_container {
@@ -358,4 +364,12 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.pic_album {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
