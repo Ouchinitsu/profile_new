@@ -120,24 +120,41 @@ scrollBottomBtn.onclick = scrollToBottom;
 //#region popdownlist
 let list = document.getElementById('popdown_list');
 let list_btn = document.getElementById('header_head_container_left_button');
-let list_btn_line = document.getElementsByClassName("btn_line");
+let list_btn_line1 = document.getElementById('btn_line1');
+let list_btn_line2 = document.getElementById('btn_line2');
+let list_btn_line3 = document.getElementById('btn_line3');
 let list_opacity = window.getComputedStyle(list);
 list_btn.onclick = popdownFunction;
-list_btn_line.onclick = popdownFunction;
+list_btn_line1.onclick = popdownFunction;
+list_btn_line2.onclick = popdownFunction;
+list_btn_line3.onclick = popdownFunction;
 
 //memo 无法直接获取在css中设置的值需要用window方法来获取
 function popdownFunction() {
-    if (list_opacity.display == 'none') {
-        list.style.display = 'flex';
+    if (list.style.display == 'none') {
+        setTimeout(() => {
+            list.style.display = 'flex';
+            document.addEventListener('click', listEventListener);
+            console.log('111');
+        }, 100);
     } else {
         list.style.display = 'none';
+        console.log('222');
     }
 
     function listEventListener(event) {
-        if (event.target.id != 'header_head_container_left_button' && event.target.id != 'btn_line') {
+        if (event.target.id != 'header_head_container_left_button' && event.target.classList != 'btn_line') {
+            // console.log(event.target.id, '1111', event.target.classList);
             list.style.display = 'none';
+            console.log('3333');
+            // 移除事件监听器
+            document.removeEventListener('click', listEventListener);
         }
     }
-    document.addEventListener('click', listEventListener);
+
+    // 只有在 list 显示的时候才添加事件监听器
+    if (list.style.display === 'flex') {
+        document.addEventListener('click', listEventListener);
+    }
 }
 //#endregion
