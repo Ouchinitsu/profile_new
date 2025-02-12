@@ -150,8 +150,11 @@ header {
 
 .header_nav {
     height: 100%;
-    background-color: rgb(235, 233, 233, 0.4);
-    border-radius: 50%;
+    background-color: rgba(244, 244, 238, 0.596);
+    /* background-color: rgba(224, 193, 201, 0.1); */
+    /* background-color: black; */
+    box-shadow: 0 5px 10px rgba(224, 193, 201, 0.51);
+    border-radius: 15px;
     text-align: center;
     align-content: center;
     background-size: cover;
@@ -159,6 +162,7 @@ header {
     margin-left: 10px;
     margin-right: 10px;
     /* width: 200px; */
+    transition: width 0.3s ease;
 }
 
 .header_nav span {
@@ -167,12 +171,17 @@ header {
     /* position: absolute; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    font-size: 16px;
+    /* transform: translate(-50%, -50%); */
+    color: black;
+    border-radius: 15px;
+    font-size: 22px;
+    text-align: center;
 }
+
+.header_nav img {
+    object-fit: contain;
+}
+
 
 
 
