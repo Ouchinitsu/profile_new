@@ -87,8 +87,7 @@ let scrollTopBtn = document.getElementById("top");
 let scrollBottomBtn = document.getElementById('bottom');
 function scrollFunction() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        scrollTopBtn.style.display = "block";
-        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.style.display = 'block';
         scrollBottomBtn.style.display = 'none';
         //条件是超过400像素，两个分别是移动距离和元素的移动距离，一般是一起用
     } else {

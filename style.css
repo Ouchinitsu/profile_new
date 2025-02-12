@@ -297,9 +297,8 @@ footer {
     width: 40px;
     height: 40px;
     left: 4%;
-    opacity: 0.3;
+    /* opacity: 0; */
     display: none;
-    transition: opacity 2s ease;
 }
 
 #bottom {
