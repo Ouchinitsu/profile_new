@@ -181,13 +181,24 @@ function picSwithcer(event) {
             element.style.opacity = '1';
         });
     }, 300);
-    // Array.from(album_pics).forEach((element, index) => {
-    //     element.src = pics[country][index];
-    //     element.style.opacity = '1';
-    // });
 }
 
+//#endregion
 
+//#region pic show
+let pic_show_container = document.getElementById('pic_show');
+let pic_show_content = document.getElementById('pic_show_content');
+function picShow(event) {
+    pic_show_container.style.display = 'block';
+    pic_show_content.src = event.target.src;
+}
+Array.from(album_pics).forEach((element) => {
+    element.onmouseover = picShow;
+});
 
-
+Array.from(album_pics).forEach((element) => {
+    element.onmouseout = function () {
+        pic_show_container.style.display = 'none';
+    }
+});
 //#endregion

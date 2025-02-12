@@ -318,9 +318,34 @@ main {
     background-color: rgba(224, 193, 201, 0.1);
     /* background-color: black; */
     box-shadow: 0 0 10px rgba(224, 193, 201, 0.873);
+    position: relative;
     /* background-size: contain; */
 }
 
+#pic_show {
+    /* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    object-fit: contain;
+    display: none;
+    pointer-events: none;
+}
+
+#pic_show_content {
+    display: block;
+}
+
+.magnifier {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    opacity: 0.3;
+}
 
 /* footer*/
 footer {
