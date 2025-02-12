@@ -13,6 +13,7 @@ function navMouseOn(event) {
     // container.style.transition = '';
     container.style.transition = 'width 0.3s ease';
     container.style.borderBottom = '3px groove black';
+    container.style.backgroundColor = 'rgba(244, 244, 238, 0.884)';
 }
 
 function navMouseOut(event) {
@@ -29,6 +30,7 @@ function navMouseOut(event) {
     container.style.width = '53.78px';
     container.style.transition = 'width 0.1 ease';
     container.style.borderBottom = '';
+    container.style.backgroundColor = 'rgba(244, 244, 238, 0)';
 }
 
 let nav_home_icon = document.getElementById('nav_home_icon');

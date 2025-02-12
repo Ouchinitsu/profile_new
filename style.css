@@ -166,7 +166,7 @@ header {
 
 .header_nav {
     height: 100%;
-    background-color: rgba(244, 244, 238, 0.884);
+    background-color: rgba(244, 244, 238, 0);
     /* background-color: rgba(224, 193, 201, 0.1); */
     /* background-color: black; */
     box-shadow: 0 5px 10px rgba(224, 193, 201, 0.51);
