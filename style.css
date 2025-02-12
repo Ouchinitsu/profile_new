@@ -285,10 +285,19 @@ main {
 /* footer*/
 footer {
     text-align: center;
-    /* background-color: brown; */
     background-color: rgba(224, 193, 201, 0.2);
     height: 26px;
+    width: 100vw;
     /* padding-top: 3%; */
+}
+
+#top {
+    position: fixed;
+    z-index: 1000;
+    bottom: 10%;
+    width: 40px;
+    height: 40px;
+    left: 4%;
 }
 
 /* common */

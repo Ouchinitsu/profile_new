@@ -80,3 +80,23 @@ Array.from(sns_icons).forEach(function (sns_icon) {
     });
 });
 //#endregion
+
+//#region pop
+window.onscroll = function () { scrollFunction() };
+let scrollTopBtn = document.getElementById("top");
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+scrollTopBtn.onclick = scrollToTop;
+//#endregion
